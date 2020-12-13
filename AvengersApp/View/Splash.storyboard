@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qEQ-bG-bMr">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="EA3-8d-4qs">
+            <objects>
+                <navigationController id="qEQ-bG-bMr" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="j77-IH-se1">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="A8n-OA-kOu" kind="relationship" relationship="rootViewController" id="oQW-h8-bDg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wdc-XO-1re" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1041" y="63"/>
+        </scene>
+        <!--Splash View Controller-->
+        <scene sceneID="keT-jx-kOe">
+            <objects>
+                <viewController id="A8n-OA-kOu" customClass="SplashViewController" customModule="AvengersApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2P3-tG-VBc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_launch_screen" translatesAutoresizingMaskIntoConstraints="NO" id="Afh-NO-EVD">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Er4-WC-zmF">
+                                <rect key="frame" x="60" y="768" width="294" height="4"/>
+                                <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                                <color key="tintColor" red="0.60609471800000003" green="0.110549219" blue="0.1215417162" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </progressView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ouo-Tz-tYk"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Afh-NO-EVD" firstAttribute="trailing" secondItem="ouo-Tz-tYk" secondAttribute="trailing" id="9oh-GO-6e3"/>
+                            <constraint firstItem="Er4-WC-zmF" firstAttribute="leading" secondItem="ouo-Tz-tYk" secondAttribute="leading" constant="60" id="ARb-sB-hSZ"/>
+                            <constraint firstItem="ouo-Tz-tYk" firstAttribute="trailing" secondItem="Er4-WC-zmF" secondAttribute="trailing" constant="60" id="Xw7-hG-Wcf"/>
+                            <constraint firstItem="Afh-NO-EVD" firstAttribute="leading" secondItem="ouo-Tz-tYk" secondAttribute="leading" id="bnv-6r-Ptt"/>
+                            <constraint firstItem="ouo-Tz-tYk" firstAttribute="bottom" secondItem="Er4-WC-zmF" secondAttribute="bottom" constant="90" id="ela-5l-qfr"/>
+                            <constraint firstAttribute="bottom" secondItem="Afh-NO-EVD" secondAttribute="bottom" id="ndG-lY-qHc"/>
+                            <constraint firstItem="Afh-NO-EVD" firstAttribute="top" secondItem="2P3-tG-VBc" secondAttribute="top" id="x8b-tM-nsH"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Zkt-v9-dYO"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="progressView" destination="Er4-WC-zmF" id="hy4-BU-eHj"/>
+                        <segue destination="6L8-Ga-yUY" kind="show" identifier="SEGUE_FROM_SPLASH_TO_MAIN" id="Jka-53-kpN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ld1-6L-QIc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-23.188405797101453" y="62.946428571428569"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="juF-Ed-vae">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="6L8-Ga-yUY" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="KIy-SW-ZpX"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kwe-79-y7I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="657" y="63"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="img_launch_screen" width="250" height="541.33331298828125"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tertiarySystemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
